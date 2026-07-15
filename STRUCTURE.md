@@ -9,7 +9,8 @@ summerhill-hub/
 ├─ og.jpg            # 1200x630 카톡/OG 전용. ⚠️ **jpg 유지** — 카카오 크롤러의 webp 렌더 보장 없음
 ├─ sh-c1.webp (1288x724) / sh-c3.webp · sh-g2.webp (632x474) / sh-blog.webp (240x240)
 │                    # 표시 크기 2x 로 프리크롭 — object-fit 이 아니라 파일 자체가 맞는 비율
-├─ sh-avatar.webp    # 상단 아바타 222px (사장님 실제 케이크 사진, CSS 로 원형)
+├─ sh-logo.webp      # 상단 로고 425x195 (사장님 실제 로고, 배경 색상키잉으로 투명). 표시 170px
+├─ favicon.png       # 64x64, 실제 로고의 해+언덕 마크 크롭 (지어낸 마크 폐기)
 ├─ f-gaegu-b.woff2 / f-pre-r.woff2 / f-pre-sb.woff2   # self-host 서브셋
 ├─ wrangler.toml     # name=summerhill-hub
 ├─ .assetsignore     # .git·문서·index_*.html 제외
