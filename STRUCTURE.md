@@ -6,9 +6,11 @@
 ```
 summerhill-hub/
 ├─ index.html        # 허브 본체
-├─ og.jpg            # 1200x630 카톡/OG 미리보기 전용 (페이지는 안 씀)
-├─ sh-c1.jpg (1288x724 16:9) / sh-c3.jpg · sh-g2.jpg (632x474 4:3) / sh-blog.jpg (240x240 1:1)
-│                    # 표시 크기 2x 로 프리크롭 — object-fit 이 아니라 파일 자체가 이미 맞는 비율
+├─ og.jpg            # 1200x630 카톡/OG 전용. ⚠️ **jpg 유지** — 카카오 크롤러의 webp 렌더 보장 없음
+├─ sh-c1.webp (1288x724) / sh-c3.webp · sh-g2.webp (632x474) / sh-blog.webp (240x240)
+│                    # 표시 크기 2x 로 프리크롭 — object-fit 이 아니라 파일 자체가 맞는 비율
+├─ sh-avatar.webp    # 상단 아바타 222px (사장님 실제 케이크 사진, CSS 로 원형)
+├─ f-gaegu-b.woff2 / f-pre-r.woff2 / f-pre-sb.woff2   # self-host 서브셋
 ├─ wrangler.toml     # name=summerhill-hub
 ├─ .assetsignore     # .git·문서·index_*.html 제외
 └─ CHANGELOG.md / STRUCTURE.md
@@ -21,7 +23,8 @@ summerhill-hub/
 - berry `#8B6B47` = **테두리 전용**(크림 위 4.73 → 밝은 면이 배경과 안 갈라지는 걸 테두리로 해결) / berry-deep `#6F5436` = 포커스 아웃라인
 - line `#ECE4D6` / ease `cubic-bezier(.22,.61,.36,1)`
 - ⚠️ **berry-deep 을 caramel 위 텍스트에 쓰지 말 것 — 3.13 미달.** 반드시 `--on-caramel`.
-- 폰트: Gaegu(손글씨 제목) + Pretendard(본문) — **CDN**(탐색·무료시안 기준)
+- 폰트: Gaegu(손글씨 제목 700) + Pretendard(본문 400/600) — **self-host 서브셋**(`f-gaegu-b.woff2` 12.8KB / `f-pre-r.woff2` 10.8 / `f-pre-sb.woff2` 10.8). **외부 도메인 0.**
+- ⚠️ **카피를 수정하면 서브셋을 다시 뜰 것.** 페이지에 쓰는 글자만 들어있어서, 새 글자는 폴백(맑은고딕)으로 튄다. 생성 = `fontTools` + 로컬 원본(`fonts/fonts-main/ofl/gaegu`, `fonts/Pretendard-1.3.9`).
 - ⚠️ **`--ink-soft`만 원본(#7C766B)과 다름** — 크림 위 4.36 미달이라 #797368로 조정. 원페이지와 톤 비교 시 이 1픽셀 차이는 의도된 것.
 - ⚠️ 흰 글씨는 이제 **어디에도 안 씀**. caramel 위 흰 글씨는 2.24 미달.
 
