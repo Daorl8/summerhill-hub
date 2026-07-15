@@ -13,12 +13,18 @@
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://summerhill-hub.lgt3232.workers.dev/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F7EFC9'/%3E%3Ccircle cx='32' cy='30' r='12' fill='%23F2A23E'/%3E%3Cpath d='M6 42 Q32 30 58 40' stroke='%231C5C31' stroke-width='5.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
-<link rel="preload" as="image" href="sh-c1.jpg" fetchpriority="high">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preload" as="image" href="sh-c1.webp" fetchpriority="high">
+<link rel="preload" as="font" type="font/woff2" href="f-gaegu-b.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="f-pre-r.woff2" crossorigin>
 <style>
+  /* self-host 서브셋 — 페이지에 실제 쓰는 글자만. 외부 도메인 0, 요청 3건.
+     CDN 이던 시절: 287KB / 요청 11건 / 외부 3곳(googleapis·gstatic·jsdelivr). */
+  @font-face{font-family:'Gaegu';font-style:normal;font-weight:700;font-display:swap;
+    src:url('f-gaegu-b.woff2') format('woff2')}
+  @font-face{font-family:'Pretendard';font-style:normal;font-weight:400;font-display:swap;
+    src:url('f-pre-r.woff2') format('woff2')}
+  @font-face{font-family:'Pretendard';font-style:normal;font-weight:600;font-display:swap;
+    src:url('f-pre-sb.woff2') format('woff2')}
   :root{
     --cream:#FCFBF9; --cream2:#F4EFE6; --card:#FFFFFF;
     --ink:#2F2C27; --ink-soft:#797368;   /* ink-faint(#A9A296) 삭제 — 크림 위 2.45 라 텍스트 불가. 필요하면 ink-soft */
@@ -39,7 +45,7 @@
           border-bottom:1px solid var(--berry)}
   .wrap{max-width:680px;margin:0 auto;padding:26px 18px calc(44px + env(safe-area-inset-bottom))}
   .hero{text-align:center;padding:14px 0 26px}
-  .logo{width:74px;height:auto;display:block;margin:0 auto 6px}
+  .logo{width:74px;height:74px;display:block;margin:0 auto 8px;border-radius:50%;object-fit:cover;border:1px solid var(--line)}
   .name{font-family:var(--serif);font-size:34px;font-weight:700;margin:0;letter-spacing:.5px}
   .tag{color:var(--ink-soft);font-size:14px;margin:6px 0 0}
 
@@ -87,29 +93,29 @@
 <div class="ribbon">✻ 썸머힐디저트 시안입니다 — 실제 운영 시 이 안내 줄은 사라져요</div>
 <div class="wrap">
   <div class="hero">
-    <svg class="logo" viewBox="0 0 64 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="32" cy="30" r="12" fill="#F2A23E"/><path d="M44.2 27.4 L49.4 23.7 L43.0 24.1 Z M42.9 23.8 L46.7 18.7 L40.8 21.1 Z M40.5 20.9 L42.6 14.8 L37.7 18.9 Z M37.4 18.7 L37.6 12.4 L34.1 17.7 Z M33.7 17.6 L32.0 11.5 L30.3 17.6 Z M29.9 17.7 L26.4 12.4 L26.6 18.7 Z M26.3 18.9 L21.4 14.8 L23.5 20.9 Z M23.2 21.1 L17.3 18.7 L21.1 23.8 Z M21.0 24.1 L14.6 23.7 L19.8 27.4 Z" fill="#F2A23E"/><path d="M6 36 Q32 24 58 34" stroke="#1C5C31" stroke-width="5.5" fill="none" stroke-linecap="round"/></svg>
+    <img class="logo" src="sh-avatar.webp" alt="" width="74" height="74">
     <h1 class="name">썸머힐디저트</h1>
     <p class="tag">군포 금정역 · 디저트 &amp; 베이킹 클래스</p>
   </div>
 
   <div class="grid">
     <a class="b big" href="https://m.blog.naver.com/summerhill_dessert/223362425603" target="_blank" rel="noopener">
-      <div class="ph"><img src="sh-c1.jpg" alt="" width="1288" height="724" fetchpriority="high"></div>
+      <div class="ph"><img src="sh-c1.webp" alt="" width="1288" height="724" fetchpriority="high"></div>
       <div class="t"><div class="k">클래스 공지 · 수업 신청</div><div class="s">26년 클래스 공지사항 및 신청 안내 →</div></div>
     </a>
 
     <a class="b" href="https://m.blog.naver.com/summerhill_dessert/224320222442" target="_blank" rel="noopener">
-      <div class="ph"><img src="sh-c3.jpg" alt="" loading="lazy" width="632" height="474"></div>
+      <div class="ph"><img src="sh-c3.webp" alt="" width="632" height="474"></div>
       <div class="t"><div class="k">카페창업 올인원</div><div class="s">클래스 자세히 보기 →</div></div>
     </a>
 
     <a class="b" href="https://instagram.com/summerhill_dessert" target="_blank" rel="noopener">
-      <div class="ph"><img src="sh-g2.jpg" alt="" loading="lazy" width="632" height="474"></div>
+      <div class="ph"><img src="sh-g2.webp" alt="" width="632" height="474"></div>
       <div class="t"><div class="k">인스타그램</div><div class="s">@summerhill_dessert →</div></div>
     </a>
 
     <a class="b wide" href="https://m.blog.naver.com/PostList.naver?blogId=summerhill_dessert&amp;tab=1" target="_blank" rel="noopener">
-      <div class="ph"><img src="sh-blog.jpg" alt="" loading="lazy" width="240" height="240"></div>
+      <div class="ph"><img src="sh-blog.webp" alt="" width="240" height="240"></div>
       <div class="t"><div class="k">블로그 전체 보기</div><div class="s">최근 수업 후기 · 소식 →</div></div>
     </a>
 
