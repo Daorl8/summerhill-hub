@@ -20,16 +20,19 @@
     --cream:#FCFBF9; --cream2:#F4EFE6; --card:#FFFFFF;
     --ink:#2F2C27; --ink-soft:#797368; --ink-faint:#A9A296;
     --berry:#8B6B47; --berry-deep:#6F5436;
+    --caramel:#C9A87C;   /* 면(리본·카톡블록) — 잉크 글씨 6.21:1. 테두리는 berry 로 잡아 크림 배경과 갈라줌 */
     --line:#ECE4D6; --line-soft:#F4EEE3;
     --serif:'Gaegu','Apple SD Gothic Neo',sans-serif;
     --sans:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+    --ease:cubic-bezier(.22,.61,.36,1);
   }
   *{box-sizing:border-box;min-width:0}
   html{color-scheme:light;-webkit-text-size-adjust:100%}
   body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.6;
        word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   a{color:inherit;text-decoration:none}
-  .ribbon{background:var(--berry);color:#fff;text-align:center;font-size:13px;line-height:1.5;padding:9px 14px;font-weight:600}
+  .ribbon{background:var(--caramel);color:var(--ink);text-align:center;font-size:13px;line-height:1.5;padding:9px 14px;font-weight:600;
+          border-bottom:1px solid var(--berry)}
   .wrap{max-width:680px;margin:0 auto;padding:26px 18px calc(44px + env(safe-area-inset-bottom))}
   .hero{text-align:center;padding:14px 0 26px}
   .logo{width:74px;height:auto;display:block;margin:0 auto 6px}
@@ -41,9 +44,12 @@
      밝은 디저트 사진을 어둡게 덮을 필요가 없고 대비도 항상 확보된다. */
   .b{display:flex;flex-direction:column;border-radius:20px;overflow:hidden;
      border:1px solid var(--line);background:var(--card);
-     transition:transform .18s ease, box-shadow .18s ease}
+     box-shadow:0 1px 2px rgba(47,44,39,.04);
+     /* 카드와 사진이 같은 곡선을 쓰게 통일. 예전엔 카드 .18s / 사진 .5s 라 따로 놀았음 */
+     transition:transform .42s var(--ease), box-shadow .42s var(--ease)}
   .ph{position:relative;background:var(--cream2);aspect-ratio:4/3;overflow:hidden}
-  .ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+  .ph img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.001);
+           transition:transform .7s var(--ease)}
   .t{padding:13px 14px 15px}
   .k{font-family:var(--serif);font-size:21px;font-weight:700;line-height:1.25;color:var(--ink)}
   .s{font-size:12.5px;color:var(--ink-soft);margin-top:2px}
@@ -56,21 +62,21 @@
   .wide .ph{aspect-ratio:1/1;width:96px;flex:0 0 96px}
   .wide .t{padding:14px 16px}
 
-  .kakao{grid-column:1 / -1;background:var(--berry);border-color:var(--berry);
+  .kakao{grid-column:1 / -1;background:var(--caramel);border-color:var(--berry);
          align-items:center;justify-content:center;padding:18px 14px}
   .kakao .t{padding:0;text-align:center}
-  .kakao .k{font-size:23px;color:#fff}
-  .kakao .s{color:rgba(255,255,255,.9)}
+  .kakao .k{font-size:23px;color:var(--ink)}
+  .kakao .s{color:var(--berry-deep)}
 
   @media(hover:hover){
-    .b:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(47,44,39,.11)}
-    .b:hover .ph img{transform:scale(1.04)}
+    .b{will-change:transform}
+    .b:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(47,44,39,.13)}
+    .b:hover .ph img{transform:scale(1.055)}
   }
-  .b:active{transform:translateY(-1px)}
+  .b:active{transform:translateY(-2px);transition-duration:.1s}
   .b:focus-visible{outline:2px solid var(--berry-deep);outline-offset:3px}
   .foot{text-align:center;color:var(--ink-soft);font-size:12px;margin-top:28px;line-height:1.7}
   @media(min-width:721px){ .wrap{padding-top:40px} .grid{gap:14px} .wide .ph{width:120px;flex-basis:120px} }
-  @media(prefers-reduced-motion:reduce){ .b,.ph img{transition:none} }
 </style>
 </head>
 <body>
