@@ -7,7 +7,8 @@
 summerhill-hub/
 ├─ index.html        # 허브 본체
 ├─ og.jpg            # 1200x630 카톡/OG 전용. ⚠️ **jpg 유지** — 카카오 크롤러의 webp 렌더 보장 없음
-├─ sh-c1.webp (1288x724) / sh-c3.webp · sh-g2.webp (632x474) / sh-blog.webp (240x240)
+├─ sh-c1.webp (1288x724, 클래스 공지 사진) / sh-c3.webp (632x474, 카페창업 사진) · sh-g2.webp (632x474) / sh-blog.webp (240x240)
+│   └ sh-c1·sh-c3 = 2026-07-16 사장님 제공본. 원본 = ../summerhills_image/{클래스 공지, 카페 창업 올인원}.jpg (세로 4:5 → 중앙크롭)
 │                    # 표시 크기 2x 로 프리크롭 — object-fit 이 아니라 파일 자체가 맞는 비율
 ├─ sh-logo.webp      # 상단 로고 425x195 (사장님 실제 로고, 배경 색상키잉으로 투명). 표시 170px
 ├─ favicon.png       # 64x64, 실제 로고의 해+언덕 마크 크롭 (지어낸 마크 폐기)
