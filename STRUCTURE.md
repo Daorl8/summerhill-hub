@@ -26,6 +26,8 @@ summerhill-hub/
 - line `#ECE4D6` / ease `cubic-bezier(.22,.61,.36,1)`
 - ⚠️ **berry-deep 을 caramel 위 텍스트에 쓰지 말 것 — 3.13 미달.** 반드시 `--on-caramel`.
 - 폰트: Gaegu(손글씨 제목 700) + Pretendard(본문 400/600) — **self-host 서브셋**(`f-gaegu-b.woff2` 12.8KB / `f-pre-r.woff2` 10.8 / `f-pre-sb.woff2` 10.8). **외부 도메인 0.**
+  - ⚠️ **Gaegu 원본에 없는 글자**(서브셋 문제 아님 · 재생성 불가): `·`(U+00B7)·`•`·`・`·`ㆍ`·`—`. 있는 건 `.`·`-`뿐.
+    → Gaegu가 쓰이는 `.k`·`.name`에 `·`를 넣으려면 **`<span class="sep">`(Pretendard)로 감쌀 것**. `.s`·`.foot`·메타는 원래 Pretendard라 무관.
 - ⚠️ **카피를 수정하면 서브셋을 다시 뜰 것.** 페이지에 쓰는 글자만 들어있어서, 새 글자는 폴백(맑은고딕)으로 튄다. 생성 = `fontTools` + 로컬 원본(`fonts/fonts-main/ofl/gaegu`, `fonts/Pretendard-1.3.9`).
 - ⚠️ **`--ink-soft`만 원본(#7C766B)과 다름** — 크림 위 4.36 미달이라 #797368로 조정. 원페이지와 톤 비교 시 이 1픽셀 차이는 의도된 것.
 - ⚠️ 흰 글씨는 이제 **어디에도 안 씀**. caramel 위 흰 글씨는 2.24 미달.
